@@ -1,0 +1,15 @@
+{
+  "name": "ws",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "dependencies": {
+    "db":"workspace:*"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}
