@@ -1,4 +1,4 @@
-
+export const dynamic = "force-dynamic"
 import { prismaClient } from "db/client";
 
 
