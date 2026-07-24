@@ -2,6 +2,10 @@ FROM oven/bun:1
 
 WORKDIR /user/src/app
 
+ARG DATABASE_URL
+ENV DATABASE_URL=$DATABASE_URL
+
+
 COPY  ./packages   ./packages
 COPY ./bun.lock ./bun.lock
 
@@ -12,6 +16,8 @@ COPY ./apps/web ./apps/web
 
 
 COPY .  .
+
+RUN echo "DATABASE_URL=$DATABASE_URL" > ./packages/db/.env
 
 RUN bun install 
 RUN bun run db:migrate
