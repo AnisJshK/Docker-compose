@@ -14,12 +14,12 @@ COPY ./turbo.json ./turbo.json
 
 COPY ./apps/web ./apps/web
 
+RUN bun install 
 
 COPY .  .
 
 RUN echo "DATABASE_URL=$DATABASE_URL" > ./packages/db/.env
 
-RUN bun install 
 RUN bun run db:migrate
 RUN bun run build
 
